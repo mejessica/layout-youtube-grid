@@ -1,59 +1,49 @@
 body{
-    background-color: #F7F7F7;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 .container{
+    max-width: 900px; /*apenas width trava a largura. largura maxima, abaixo disso ele pega 100%*/
     display: grid;
-    grid-template-columns: repeat(9, 100px);
-    grid-template-rows: repeat(5, 83px);
-    grid-gap: 12px;
+    background-color: #F7F7F7;
+    grid-template-areas: "video-destaque propaganda"
+    "video-destaque sugeridos" ; /*usar nomes de areas facilita*/
+    grid-template-columns: 1fr 270px;
+    grid-template-rows: 56px 1fr; /*usar fração facilita*/
+    grid-gap: 20px;
+    padding: 35px;
     
 }
-.principal{
-    grid-area: 2 / 2 / 5 / 7;
+.video-destaque{
+    grid-area: video-destaque;
 }
-.descricao{
-    grid-area: 4 / 2 / 7 / 7;
-    margin-top: 40px;  
+.video-destaque img{
+    margin-bottom: 12px;
+    width: 100%;
 }
-.descricao h5{
-    font-weight: 300;
+.video-destaque .titulo{
+    font-size: 18px;
+    margin-bottom: 7px; /*sempre usar na mesma ordem*/
+}
+.video-destaque .vizualizacoes{
     font-size: 14px;
-    line-height: 17px;
-    margin-top: 5px;
-}
-.descricao p{
-    margin: 5px 0 5px 0;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 19px;
+    margin-bottom: 7px;
 }
 .propaganda{
-    position: relative;
-    grid-area: 2 / 7 / 2 / 10;
+    grid-area: propaganda;
 }
-.recomendacao{
+.videos-sugeridos{
+    grid-area: videos-sugeridos;
+}
+.videos-sugeridos .video{
     display: flex;
-    margin-top: 12px;
+    gap: 5px;
+    margin-bottom: 15px;
 }
-.recomendacao h5{
-    margin-left: 3px;
-    font-weight: 700;
+.videos-sugeridos .video .titulo{
     font-size: 14px;
-    line-height: 17px;
+    margin-bottom: 5px;
 }
-.recomendacao p {
-    margin-left: 3px;
-    margin-top: 5px;
-    font-weight: 300;
+.videos-sugeridos .video p{
     font-size: 11px;
-    line-height: 13px;
-}
-#escrito-propa{
-    display: inline-block;
-    position: absolute;
-    font-weight: 300;
-    font-size: 11px;
-    line-height: 13px;
-    
+    margin-bottom: 5px;
 }
